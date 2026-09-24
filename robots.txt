@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sai-chaitanya-ch.github.io/portfolio/sitemap.xml

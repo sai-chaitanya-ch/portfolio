@@ -1,0 +1,17 @@
+{
+  "name": "Chatakommu Sai Chaitanya — Portfolio Dossier",
+  "short_name": "Sai Chaitanya",
+  "description": "Personal portfolio dossier of Chatakommu Sai Chaitanya — Software Engineer, Growth Strategist, and Researcher.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0e1526",
+  "theme_color": "#0e1526",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "64x64 128x128 256x256 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

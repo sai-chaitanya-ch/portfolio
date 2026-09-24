@@ -3,10 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chatakommu Sai Chaitanya — Builder Dossier</title>
+<title>Chatakommu Sai Chaitanya — Builder Dossier | Software Engineer, Researcher &amp; Growth Strategist</title>
+<meta name="description" content="Personal builder dossier of Chatakommu Sai Chaitanya: Software engineer, Growth Strategist at Starto India, creator of Quarter-Q96, and author of 10 applied research publications with 3,715+ reads.">
+<meta name="author" content="Chatakommu Sai Chaitanya">
+<meta name="keywords" content="Chatakommu Sai Chaitanya, Sai Chaitanya, Software Engineer, Growth Strategist, Starto India, Quarter-Q96, Mohan Babu University, ResearchGate, AI Research, React Native">
+<meta name="theme-color" content="#0e1526">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://sai-chaitanya-ch.github.io/portfolio/">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sai-chaitanya-ch.github.io/portfolio/">
+<meta property="og:title" content="Chatakommu Sai Chaitanya — Builder Dossier">
+<meta property="og:description" content="Software Engineer, Growth Strategist at Starto India, Quarter-Q96 App Creator, and Researcher (3,715+ Reads on ResearchGate).">
+<meta property="og:image" content="https://sai-chaitanya-ch.github.io/portfolio/favicon.svg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chatakommu Sai Chaitanya — Builder Dossier">
+<meta name="twitter:description" content="Software Engineer, Growth Strategist at Starto India, Quarter-Q96 App Creator, and Researcher (3,715+ Reads on ResearchGate).">
+
+<!-- Favicon & PWA -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Structured Data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Chatakommu Sai Chaitanya",
+  "url": "https://sai-chaitanya-ch.github.io/portfolio/",
+  "email": "mailto:chsai630333@gmail.com",
+  "jobTitle": "Growth Strategist & Software Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Starto India"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Mohan Babu University"
+  },
+  "sameAs": [
+    "https://www.researchgate.net/profile/Sai-Chaitanya-Chatakommu/research",
+    "https://www.linkedin.com/in/sai-chaitanya-ch",
+    "https://github.com/sai-chaitanya-ch",
+    "https://leetcode.com/u/Sai-Chaitanya-ch/"
+  ]
+}
+</script>
+
 <style>
   :root{
     --bg:#0e1526;
@@ -20,6 +72,7 @@
     --text-tertiary:#5c6689;
     --amber:#e7a33e;
     --teal:#57d6c9;
+    --purple:#b89bf8;
     --font-display:'Fraunces', serif;
     --font-body:'Inter', sans-serif;
     --font-mono:'JetBrains Mono', monospace;
@@ -39,9 +92,22 @@
     font-family:var(--font-body);
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
+    position:relative;
   }
 
-  a{color:inherit;}
+  /* Reading Progress Bar */
+  #scrollProgressBar{
+    position:fixed;
+    top:0;
+    left:0;
+    height:3px;
+    background:linear-gradient(90deg, var(--teal), var(--amber));
+    width:0%;
+    z-index:999;
+    transition:width 0.1s ease-out;
+  }
+
+  a{color:inherit; text-decoration:none;}
 
   ::selection{background:var(--amber); color:#0e1526;}
 
@@ -84,7 +150,7 @@
     position:absolute;
     width:14px; height:14px;
     border-color:var(--amber);
-    opacity:0.7;
+    opacity:0.75;
   }
   .panel::before{ top:-1px; left:-1px; border-top:2px solid var(--amber); border-left:2px solid var(--amber);}
   .panel::after{ top:-1px; right:-1px; border-top:2px solid var(--amber); border-right:2px solid var(--amber);}
@@ -105,13 +171,13 @@
   /* ---------- header / nav ---------- */
   header{
     position:sticky; top:0; z-index:50;
-    background:rgba(14,21,38,0.86);
-    backdrop-filter:blur(10px);
+    background:rgba(14,21,38,0.92);
+    backdrop-filter:blur(12px);
     border-bottom:1px solid var(--border-quiet);
   }
   .navbar{
     display:flex; align-items:center; justify-content:space-between;
-    padding:18px 32px;
+    padding:16px 32px;
     max-width:1080px; margin:0 auto;
   }
   .navbar .mark{
@@ -119,36 +185,120 @@
     font-size:13px;
     letter-spacing:0.05em;
     color:var(--text-secondary);
+    display:flex;
+    align-items:center;
+    gap:8px;
   }
   .navbar .mark strong{color:var(--text-primary); font-weight:600;}
+  .navbar .mark .dot-status{
+    width:6px; height:6px; border-radius:50%; background:var(--teal);
+    box-shadow:0 0 6px var(--teal);
+  }
+
   nav ul{
     list-style:none;
-    display:flex; gap:28px;
+    display:flex; gap:24px;
     font-family:var(--font-mono);
     font-size:12px;
     letter-spacing:0.05em;
     text-transform:uppercase;
   }
-  nav a{text-decoration:none; color:var(--text-secondary); transition:color 0.2s;}
-  nav a:hover{color:var(--amber);}
-  .navbar-toggle{display:none;}
+  nav a{
+    text-decoration:none; color:var(--text-secondary);
+    transition:color 0.2s, border-color 0.2s;
+    padding-bottom:3px;
+    border-bottom:1px solid transparent;
+  }
+  nav a:hover, nav a.nav-active{
+    color:var(--amber);
+    border-bottom-color:var(--amber);
+  }
+
+  /* Mobile Hamburger */
+  .navbar-toggle{
+    display:none;
+    background:transparent;
+    border:1px solid var(--border-quiet);
+    color:var(--text-primary);
+    width:40px; height:38px;
+    cursor:pointer;
+    padding:8px 9px;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .navbar-toggle span{
+    display:block;
+    height:2px;
+    width:100%;
+    background:var(--text-primary);
+    transition:all 0.25s ease;
+  }
+  .navbar-toggle.open span:nth-child(1){
+    transform: translateY(7px) rotate(45deg);
+    background:var(--amber);
+  }
+  .navbar-toggle.open span:nth-child(2){
+    opacity:0;
+  }
+  .navbar-toggle.open span:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+    background:var(--amber);
+  }
+
+  /* Mobile Drawer Menu */
+  .mobile-menu{
+    display:none;
+    position:fixed;
+    top:63px; left:0; right:0; bottom:0;
+    background:rgba(14,21,38,0.98);
+    backdrop-filter:blur(16px);
+    z-index:49;
+    padding:32px 24px;
+    flex-direction:column;
+    gap:20px;
+    border-bottom:1px solid var(--border-quiet);
+    overflow-y:auto;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    font-family:var(--font-mono);
+    font-size:15px;
+    text-transform:uppercase;
+  }
+  .mobile-menu a{
+    color:var(--text-secondary);
+    padding:8px 0;
+    display:block;
+    border-bottom:1px solid var(--border-quiet);
+  }
+  .mobile-menu a:hover{color:var(--amber);}
+  .mobile-menu-cta{
+    margin-top:12px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
 
   /* ---------- hero ---------- */
   .hero{
-    padding:96px 0 72px;
+    padding:90px 0 70px;
     position:relative;
   }
   .hero-grid{
     display:grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap:56px;
+    grid-template-columns: 1.25fr 1fr;
+    gap:48px;
     align-items:start;
   }
   h1.display{
     font-family:var(--font-display);
     font-weight:500;
-    font-size:clamp(40px, 5.4vw, 66px);
-    line-height:1.05;
+    font-size:clamp(38px, 5.2vw, 64px);
+    line-height:1.06;
     letter-spacing:-0.01em;
     margin-bottom:22px;
   }
@@ -158,33 +308,38 @@
     color:var(--amber);
   }
   .hero-desc{
-    font-size:17px;
+    font-size:16.5px;
     color:var(--text-secondary);
     max-width:52ch;
     margin-bottom:28px;
+    line-height:1.65;
   }
   .hero-links{
-    display:flex; gap:14px; flex-wrap:wrap;
+    display:flex; gap:12px; flex-wrap:wrap;
   }
   .btn{
     font-family:var(--font-mono);
     font-size:12.5px;
     letter-spacing:0.04em;
     text-decoration:none;
-    padding:12px 20px;
+    padding:12px 18px;
     border:1px solid var(--border);
     color:var(--text-primary);
     transition: all 0.2s;
     display:inline-flex; align-items:center; gap:8px;
+    cursor:pointer;
+    background:transparent;
   }
   .btn:hover{background:var(--amber); color:#0e1626; border-color:var(--amber);}
+  .btn.primary{background:var(--amber); color:#0e1626; border-color:var(--amber); font-weight:600;}
+  .btn.primary:hover{background:#f3b455; border-color:#f3b455;}
   .btn.ghost{border-color:var(--border-quiet); color:var(--text-secondary);}
   .btn.ghost:hover{border-color:var(--teal); color:var(--teal); background:transparent;}
 
   /* status dashboard */
   .status-panel .status-row{
     display:flex; justify-content:space-between; align-items:baseline;
-    padding:12px 0;
+    padding:11px 0;
     border-bottom:1px solid var(--border-quiet);
     font-family:var(--font-mono);
     font-size:12.5px;
@@ -223,7 +378,7 @@
   section.divider-top{border-top:1px solid var(--border-quiet);}
   .section-head{
     display:flex; justify-content:space-between; align-items:flex-end;
-    margin-bottom:40px; gap:24px; flex-wrap:wrap;
+    margin-bottom:36px; gap:24px; flex-wrap:wrap;
   }
   h2.section-title{
     font-family:var(--font-display);
@@ -234,11 +389,11 @@
     font-family:var(--font-mono);
     font-size:12px;
     color:var(--text-tertiary);
-    max-width:32ch;
+    max-width:38ch;
     text-align:right;
   }
 
-  /* ---------- active builds ---------- */
+  /* ---------- active builds (2 roles) ---------- */
   .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
   .card{
     position:relative;
@@ -272,42 +427,213 @@
     border:1px solid;
     white-space:nowrap;
   }
-  .status-pill.beta{color:var(--amber); border-color:rgba(231,163,62,0.4);}
-  .status-pill.live{color:var(--teal); border-color:rgba(87,214,201,0.4);}
-  .card p{color:var(--text-secondary); font-size:14.5px;}
+  .status-pill.beta{color:var(--amber); border-color:rgba(231,163,62,0.4); background:rgba(231,163,62,0.06);}
+  .status-pill.live{color:var(--teal); border-color:rgba(87,214,201,0.4); background:rgba(87,214,201,0.06);}
+  .card p{color:var(--text-secondary); font-size:14.5px; line-height:1.6;}
   .card ul.details{
     list-style:none; font-size:13.5px; color:var(--text-secondary);
-    display:flex; flex-direction:column; gap:6px;
+    display:flex; flex-direction:column; gap:7px;
   }
   .card ul.details li::before{content:'—  '; color:var(--text-tertiary);}
+  .card .card-cta{
+    margin-top:8px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+  }
   .tag-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:auto; padding-top:8px;}
 
-  /* ---------- research ---------- */
-  .research-feature{
-    display:grid; grid-template-columns: 100px 1fr; gap:28px;
-    padding:32px 0;
-    border-bottom:1px solid var(--border-quiet);
+  /* ---------- publications / research ---------- */
+  .pub-featured{
+    margin-bottom:32px;
+    background:var(--bg-panel);
   }
-  .research-feature .fig{
+  .pub-featured-grid{
+    display:grid; grid-template-columns: 80px 1fr; gap:28px;
+    align-items:start;
+  }
+  .pub-featured-badge{
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .pub-featured .fig{
     font-family:var(--font-mono);
     font-size:12px; color:var(--text-tertiary);
+    line-height:1.2;
   }
-  .research-feature h3{
-    font-family:var(--font-display); font-weight:500; font-size:21px;
-    margin-bottom:10px; line-height:1.3;
+  .pub-featured .kicker{
+    font-family:var(--font-mono);
+    font-size:11px; letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:6px;
   }
-  .research-feature p{color:var(--text-secondary); font-size:14.5px; margin-bottom:14px;}
+  .pub-featured h3{
+    font-family:var(--font-display); font-weight:500; font-size:23px;
+    margin-bottom:12px; line-height:1.3;
+    color:var(--text-primary);
+  }
+  .pub-featured p{color:var(--text-secondary); font-size:14.5px; margin-bottom:16px; line-height:1.6; max-width:64ch;}
   .meta-row{display:flex; gap:18px; flex-wrap:wrap; font-family:var(--font-mono); font-size:12px; color:var(--text-tertiary);}
   .meta-row span strong{color:var(--text-secondary);}
 
-  .research-list{list-style:none; display:flex; flex-direction:column; margin-top:8px;}
-  .research-list li{
-    display:flex; justify-content:space-between; gap:16px;
-    padding:14px 0; border-bottom:1px solid var(--border-quiet);
-    font-size:14px; color:var(--text-secondary);
+  /* Search & Filter Bar */
+  .pub-controls{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-bottom:22px;
   }
-  .research-list li:last-child{border-bottom:none;}
-  .research-list .ridx{font-family:var(--font-mono); color:var(--text-tertiary); font-size:12px; min-width:26px;}
+  .pub-search-wrap{
+    position:relative;
+    width:100%;
+  }
+  .pub-search-input{
+    width:100%;
+    background:var(--bg-panel);
+    border:1px solid var(--border-quiet);
+    color:var(--text-primary);
+    font-family:var(--font-mono);
+    font-size:13px;
+    padding:12px 16px 12px 38px;
+    transition:border-color 0.2s;
+  }
+  .pub-search-input:focus{
+    outline:none;
+    border-color:var(--amber);
+  }
+  .pub-search-icon{
+    position:absolute;
+    left:14px;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--text-tertiary);
+    font-size:14px;
+  }
+  .pub-filter-bar{
+    display:flex; gap:8px; flex-wrap:wrap;
+  }
+  .pub-filter-btn{
+    background:var(--bg-panel);
+    border:1px solid var(--border-quiet);
+    color:var(--text-secondary);
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    letter-spacing:0.04em;
+    padding:7px 14px;
+    cursor:pointer;
+    transition:all 0.2s;
+  }
+  .pub-filter-btn:hover{
+    border-color:var(--amber);
+    color:var(--text-primary);
+  }
+  .pub-filter-btn.active{
+    background:var(--amber);
+    color:#0e1526;
+    border-color:var(--amber);
+    font-weight:600;
+  }
+
+  .pub-list{
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .pub-item{
+    background:var(--bg-panel);
+    border:1px solid var(--border-quiet);
+    padding:18px 24px;
+    display:grid;
+    grid-template-columns: 44px 1fr auto;
+    align-items:center;
+    gap:20px;
+    transition:border-color 0.2s, transform 0.2s, background 0.2s;
+  }
+  .pub-item:hover{
+    border-color:var(--border);
+    background:var(--bg-panel-raised);
+    transform:translateX(3px);
+  }
+  .pub-idx{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text-tertiary);
+  }
+  .pub-content{
+    display:flex; flex-direction:column; gap:4px;
+  }
+  .pub-title{
+    font-family:var(--font-display);
+    font-size:17px;
+    font-weight:500;
+    color:var(--text-primary);
+    line-height:1.35;
+  }
+  .pub-meta-mobile{
+    display:none;
+  }
+  .pub-meta-right{
+    display:flex; align-items:center; gap:14px;
+    font-family:var(--font-mono); font-size:12px;
+  }
+  .pub-badge{
+    font-family:var(--font-mono);
+    font-size:10.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:3px 10px;
+    border:1px solid;
+    white-space:nowrap;
+  }
+  .pub-badge.preprint{
+    color:var(--amber);
+    border-color:rgba(231,163,62,0.45);
+    background:rgba(231,163,62,0.06);
+  }
+  .pub-badge.research{
+    color:var(--teal);
+    border-color:rgba(87,214,201,0.45);
+    background:rgba(87,214,201,0.06);
+  }
+  .pub-badge.conference{
+    color:var(--purple);
+    border-color:rgba(184,155,248,0.45);
+    background:rgba(184,155,248,0.06);
+  }
+  .pub-badge.article{
+    color:var(--text-secondary);
+    border-color:var(--border-quiet);
+    background:rgba(139,152,181,0.06);
+  }
+  .pub-date{
+    color:var(--text-tertiary);
+    white-space:nowrap;
+    min-width:85px;
+    text-align:right;
+  }
+  .pub-action-btn{
+    background:transparent;
+    border:1px solid var(--border-quiet);
+    color:var(--text-tertiary);
+    padding:4px 8px;
+    font-family:var(--font-mono);
+    font-size:11px;
+    cursor:pointer;
+    transition:all 0.2s;
+  }
+  .pub-action-btn:hover{
+    color:var(--amber);
+    border-color:var(--amber);
+  }
+  .no-pub-found{
+    display:none;
+    text-align:center;
+    padding:36px;
+    background:var(--bg-panel);
+    border:1px dashed var(--border-quiet);
+    font-family:var(--font-mono);
+    color:var(--text-tertiary);
+    font-size:13px;
+  }
 
   /* ---------- credentials / experience ---------- */
   .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
@@ -315,6 +641,11 @@
     background:var(--bg-panel);
     border:1px solid var(--border-quiet);
     padding:22px;
+    transition:transform 0.2s, border-color 0.2s;
+  }
+  .cred-card:hover{
+    transform:translateY(-2px);
+    border-color:var(--border);
   }
   .cred-card .kicker{font-family:var(--font-mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-bottom:8px;}
   .cred-card h4{font-family:var(--font-display); font-weight:500; font-size:17px; margin-bottom:6px;}
@@ -322,14 +653,14 @@
   .cred-card .idline{font-family:var(--font-mono); font-size:11px; color:var(--text-tertiary); margin-top:10px;}
 
   .exp-row{
-    display:grid; grid-template-columns: 180px 1fr 120px;
-    gap:20px; padding:22px 0; border-bottom:1px solid var(--border-quiet);
+    display:grid; grid-template-columns: 180px 1fr 140px;
+    gap:20px; padding:24px 0; border-bottom:1px solid var(--border-quiet);
     align-items:baseline;
   }
   .exp-row:last-child{border-bottom:none;}
   .exp-row .exp-time{font-family:var(--font-mono); font-size:12px; color:var(--text-tertiary);}
   .exp-row h4{font-family:var(--font-display); font-weight:500; font-size:18px; margin-bottom:6px;}
-  .exp-row p{font-size:13.5px; color:var(--text-secondary);}
+  .exp-row p{font-size:13.5px; color:var(--text-secondary); margin-bottom:6px; line-height:1.6;}
   .exp-row .exp-id{font-family:var(--font-mono); font-size:11px; color:var(--text-tertiary); text-align:right;}
 
   /* ---------- skills ---------- */
@@ -341,16 +672,20 @@
     border:1px solid var(--border-quiet);
     color:var(--text-secondary);
     transition: all 0.2s;
+    background:var(--bg-panel);
   }
-  .skill-chip:hover{border-color:var(--amber); color:var(--amber);}
+  .skill-chip:hover{border-color:var(--amber); color:var(--amber); transform:translateY(-1px);}
 
   .achievement-strip{
     margin-top:36px;
-    display:flex; align-items:center; gap:16px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
     font-family:var(--font-mono); font-size:13px; color:var(--text-secondary);
     padding:18px 22px; border:1px dashed var(--border-quiet);
+    background:var(--bg-panel);
   }
   .achievement-strip strong{color:var(--amber); font-weight:600;}
+  .achievement-strip a{color:var(--teal); text-decoration:none;}
+  .achievement-strip a:hover{text-decoration:underline;}
 
   /* ---------- footer ---------- */
   footer{
@@ -364,16 +699,91 @@
   footer p{color:var(--text-secondary); max-width:44ch; margin-bottom:24px;}
   .contact-list{list-style:none; display:flex; flex-direction:column; gap:12px;}
   .contact-list li{
-    display:flex; justify-content:space-between;
+    display:flex; justify-content:space-between; align-items:center;
     font-family:var(--font-mono); font-size:13px;
     padding-bottom:10px; border-bottom:1px solid var(--border-quiet);
+    gap:16px;
   }
-  .contact-list a{text-decoration:none; color:var(--text-primary);}
+  .contact-list a{text-decoration:none; color:var(--text-primary); transition:color 0.2s;}
   .contact-list a:hover{color:var(--amber);}
-  .contact-list .clabel{color:var(--text-tertiary);}
+  .contact-list .clabel{color:var(--text-tertiary); white-space:nowrap;}
+  .copy-email-btn{
+    background:transparent;
+    border:1px solid var(--border-quiet);
+    color:var(--text-tertiary);
+    padding:2px 8px;
+    font-family:var(--font-mono);
+    font-size:10.5px;
+    cursor:pointer;
+    margin-left:8px;
+    transition:all 0.2s;
+  }
+  .copy-email-btn:hover{
+    border-color:var(--amber);
+    color:var(--amber);
+  }
   .foot-note{
     margin-top:50px; font-family:var(--font-mono); font-size:11px; color:var(--text-tertiary);
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+
+  /* Floating Toast Notification */
+  #toast{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    background:var(--bg-panel-raised);
+    border:1px solid var(--amber);
+    color:var(--text-primary);
+    font-family:var(--font-mono);
+    font-size:12px;
+    padding:12px 18px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(10px);
+    transition:all 0.25s ease;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  #toast.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+  }
+  #toast .toast-dot{
+    width:6px; height:6px; border-radius:50%; background:var(--teal);
+  }
+
+  /* Back to Top Button */
+  #backToTop{
+    position:fixed;
+    bottom:24px;
+    left:24px;
+    width:38px; height:38px;
+    background:var(--bg-panel);
+    border:1px solid var(--border-quiet);
+    color:var(--text-secondary);
+    font-family:var(--font-mono);
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    opacity:0;
+    pointer-events:none;
+    transition:all 0.25s ease;
+    z-index:900;
+  }
+  #backToTop.show{
+    opacity:1;
+    pointer-events:auto;
+  }
+  #backToTop:hover{
+    border-color:var(--amber);
+    color:var(--amber);
   }
 
   /* ---------- responsive ---------- */
@@ -383,33 +793,79 @@
     .grid-3{grid-template-columns:1fr 1fr;}
     .footer-grid{grid-template-columns:1fr;}
     nav ul{display:none;}
+    .navbar-toggle{display:flex;}
+  }
+  @media (max-width:680px){
+    .pub-item{
+      grid-template-columns: 28px 1fr;
+      gap:12px;
+      padding:14px 16px;
+    }
+    .pub-meta-right{display:none;}
+    .pub-meta-mobile{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-top:6px;
+      font-family:var(--font-mono);
+      font-size:11px;
+      flex-wrap:wrap;
+    }
+    .pub-featured-grid{grid-template-columns:1fr;}
   }
   @media (max-width:560px){
     .wrap{padding:0 20px;}
     .grid-3{grid-template-columns:1fr;}
     .exp-row{grid-template-columns:1fr; gap:6px;}
     .exp-row .exp-id{text-align:left;}
-    .research-feature{grid-template-columns:1fr;}
     .section-note{text-align:left;}
+    .contact-list li{flex-direction:column; align-items:flex-start; gap:4px;}
   }
 </style>
 </head>
 <body>
 
+<!-- Reading Progress Bar -->
+<div id="scrollProgressBar"></div>
+
 <header>
   <div class="navbar">
-    <div class="mark">CH.SAI.<strong>CHAITANYA</strong> <span style="color:var(--text-tertiary)">// DOSSIER</span></div>
+    <div class="mark">
+      <span class="dot-status"></span>
+      CH.SAI.<strong>CHAITANYA</strong>
+      <span style="color:var(--text-tertiary)">// DOSSIER</span>
+    </div>
     <nav>
       <ul>
-        <li><a href="#builds">Active</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#credentials">Credentials</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#builds" class="nav-link">Active</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li><a href="#credentials" class="nav-link">Credentials</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
+    <button class="navbar-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#builds" class="mobile-nav-link">Active Builds</a></li>
+    <li><a href="#publications" class="mobile-nav-link">Publications (10)</a></li>
+    <li><a href="#credentials" class="mobile-nav-link">Credentials</a></li>
+    <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+    <li><a href="#contact" class="mobile-nav-link">Contact &amp; Profiles</a></li>
+  </ul>
+  <div class="mobile-menu-cta">
+    <a class="btn primary" href="https://drive.google.com/file/d/1XeIZISIYP8JbUkUB6qarUzEPaPwSuGh-/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Download Quarter-Q96 APK ↓</a>
+    <a class="btn ghost" href="mailto:chsai630333@gmail.com">Email chsai630333@gmail.com ↗</a>
+  </div>
+</div>
 
 <main>
 
@@ -419,10 +875,11 @@
         <div>
           <div class="eyebrow">B.Tech CSE · Mohan Babu University · Class of 2028</div>
           <h1 class="display">Chatakommu Sai<br><em>Chaitanya</em></h1>
-          <p class="hero-desc">I build software end to end, run growth strategy for an early-stage startup platform, and publish applied research on how AI is reshaping the tech job market — three disciplines, one working method: ship, measure, write it down.</p>
+          <p class="hero-desc">I build software end to end, run growth strategy for an early-stage startup platform, and publish applied research on how AI is reshaping technical workforces — three disciplines with one continuous operating loop: build, scale, publish.</p>
           <div class="hero-links">
             <a class="btn" href="#builds">View active builds ↓</a>
-            <a class="btn ghost" href="#contact">Get in touch</a>
+            <a class="btn primary" href="https://drive.google.com/file/d/1XeIZISIYP8JbUkUB6qarUzEPaPwSuGh-/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Download App (Beta) ↓</a>
+            <a class="btn ghost" href="mailto:chsai630333@gmail.com">Get in touch</a>
           </div>
         </div>
 
@@ -435,15 +892,19 @@
           </div>
           <div class="status-row">
             <span class="label">ROLE // Starto India</span>
-            <span class="value active">ACTIVE</span>
+            <span class="value active">GROWTH STRATEGIST</span>
           </div>
           <div class="status-row">
-            <span class="label">RESEARCH // ResearchGate</span>
-            <span class="value">7 PUBLISHED</span>
+            <span class="label">PUBLICATIONS</span>
+            <span class="value">10 PUBLISHED</span>
+          </div>
+          <div class="status-row">
+            <span class="label">RESEARCH READS</span>
+            <span class="value active">3,715+ READS</span>
           </div>
           <div class="status-row">
             <span class="label">LATEST PAPER</span>
-            <span class="value">JUL 2026</span>
+            <span class="value">JUN 2026</span>
           </div>
           <div class="terminal-line" id="terminalLine">compiling next release</div>
         </div>
@@ -451,6 +912,7 @@
     </div>
   </section>
 
+  <!-- 2 Active Roles / Builds -->
   <section id="builds" class="divider-top">
     <div class="wrap">
       <div class="section-head">
@@ -458,31 +920,39 @@
           <div class="eyebrow">Currently building</div>
           <h2 class="section-title">Active roles &amp; builds</h2>
         </div>
-        <div class="section-note">What I'm actively shipping and running right now, not archived work.</div>
+        <div class="section-note">What I'm actively shipping, scaling, and driving right now.</div>
       </div>
 
       <div class="grid-2">
+        <!-- Quarter-Q96 with Direct App Download Link -->
         <div class="card">
           <div class="card-top">
             <div>
               <div class="kicker">Independent Product</div>
               <h3>Quarter&#8288;-&#8288;Q96</h3>
             </div>
-            <span class="status-pill beta">Beta</span>
+            <span class="status-pill beta">APK Beta</span>
           </div>
-          <p>An AI-powered Android productivity app, conceived and built solo. Currently in private APK beta testing with real users ahead of a Google Play submission.</p>
+          <p>An AI-powered Android productivity app, conceived and engineered solo. Currently in private APK beta testing with active users ahead of Google Play release.</p>
           <ul class="details">
-            <li>React Native + Expo, developed in Replit, built with EAS Build</li>
-            <li>Modular architecture designed for fast feature iteration</li>
-            <li>Private GitHub repo; structured beta-feedback loop before public release</li>
+            <li>React Native + Expo architecture, built and packaged with EAS Build</li>
+            <li>Modular productivity workflows engineered for high responsiveness</li>
+            <li>Continuous user feedback loop and beta telemetry integration</li>
           </ul>
+          <div class="card-cta">
+            <a class="btn primary" href="https://drive.google.com/file/d/1XeIZISIYP8JbUkUB6qarUzEPaPwSuGh-/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+              Download Android APK (Beta) ↓
+            </a>
+          </div>
           <div class="tag-row">
             <span class="tag">React Native</span>
             <span class="tag">Expo</span>
             <span class="tag">EAS Build</span>
+            <span class="tag">Android APK</span>
           </div>
         </div>
 
+        <!-- Starto India Growth Strategist Card -->
         <div class="card">
           <div class="card-top">
             <div>
@@ -491,54 +961,254 @@
             </div>
             <span class="status-pill live">Active · Starto India</span>
           </div>
-          <p>Ongoing growth role at Starto India, covering audits, conversion optimization, and AI strategy across the platform's founder-facing product.</p>
+          <p>Directing multi-channel growth, user acquisition funnels, and ecosystem scaling across Starto India's founder platform.</p>
           <ul class="details">
-            <li>Full website growth audit — navigation, hierarchy, CTA placement</li>
-            <li>Redesigned career-page flow to fix social-traffic drop-off</li>
-            <li>Proposed AI differentiation strategy for founder-facing tools</li>
+            <li>Organized and conducted flagship ecosystem event <strong>Sarathi-2047</strong></li>
+            <li>Executed reel growth boost strategies and organic viral distribution</li>
+            <li>Script writing, high-intent leads tracking pipelines, and conversion modeling</li>
+            <li>Product planning and feature roadmap development for founder tools</li>
           </ul>
           <div class="tag-row">
             <span class="tag">Growth Strategy</span>
-            <span class="tag">UX Audits</span>
-            <span class="tag">AI Strategy</span>
+            <span class="tag">Sarathi-2047</span>
+            <span class="tag">Product Planning</span>
+            <span class="tag">Leads Tracking</span>
+            <span class="tag">Reel Growth</span>
+            <span class="tag">Script Writing</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="research" class="divider-top">
+  <!-- Publications Section (10 items + search + filter) -->
+  <section id="publications" class="divider-top">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Applied research</div>
-          <h2 class="section-title">Published work</h2>
+          <div class="eyebrow">Applied research &amp; writing</div>
+          <h2 class="section-title">Publications</h2>
         </div>
-        <div class="section-note">Seven preprints on ResearchGate, written alongside coursework.</div>
+        <div class="section-note">10 published works with <strong>3,715+ reads</strong> on ResearchGate.</div>
       </div>
 
-      <div class="research-feature">
-        <div class="fig">FIG.<br>07</div>
-        <div>
-          <h3>Navigating the AI-Disrupted Tech Job Market: A Data-Driven Career Guidance Framework for Computer Science Graduates of 2026–2028</h3>
-          <p>Latest preprint, published July 2026. Looks at how generative AI is reshaping entry-level tech hiring and proposes a practical, data-driven framework computer science graduates can use to navigate career decisions over the next two years.</p>
-          <div class="meta-row">
-            <span><strong>DOI</strong> 10.13140/RG.2.2.13034.07369</span>
-            <span><strong>License</strong> CC BY 4.0</span>
-            <span><strong>Status</strong> Preprint</span>
+      <!-- Featured Latest Publication -->
+      <div class="panel pub-featured">
+        <span class="bl"></span><span class="br"></span>
+        <div class="pub-featured-grid">
+          <div class="pub-featured-badge">
+            <div class="fig">FIG.<br>10</div>
+            <span class="tag">PREPRINT</span>
+          </div>
+          <div class="pub-featured-body">
+            <div class="kicker">Latest Release · June 2026</div>
+            <h3 class="pub-featured-title">Future-Proofing CS Careers in the AI Era</h3>
+            <p class="pub-featured-desc">An exploratory study investigating how generative AI, agentic systems, and automation are redefining entry-level software engineering pathways, offering actionable strategic frameworks for computer science students and engineers navigating career pivots.</p>
+            <div class="meta-row">
+              <span><strong>Type</strong> Preprint</span>
+              <span><strong>Published</strong> June 2026</span>
+              <span><strong>Reads</strong> <a href="https://www.researchgate.net/profile/Sai-Chaitanya-Chatakommu/research" target="_blank" rel="noopener noreferrer" style="color:var(--teal); text-decoration:none;">ResearchGate Profile ↗</a></span>
+            </div>
           </div>
         </div>
       </div>
 
-      <ul class="research-list">
-        <li><span class="ridx">06</span><span>Preceding publication in the same research line — link on ResearchGate profile</span></li>
-        <li><span class="ridx">05</span><span>Preceding publication in the same research line — link on ResearchGate profile</span></li>
-        <li><span class="ridx">04</span><span>Preceding publication in the same research line — link on ResearchGate profile</span></li>
-        <li><span class="ridx">…</span><span>Full catalog of 7 publications available on ResearchGate</span></li>
-      </ul>
+      <!-- Interactive Search & Filter Controls -->
+      <div class="pub-controls">
+        <div class="pub-search-wrap">
+          <span class="pub-search-icon">🔍</span>
+          <input type="text" id="pubSearch" class="pub-search-input" placeholder="Search papers by keyword (e.g. AI, 5G, Workforce, Automation, Deforestation)...">
+        </div>
+        <div class="pub-filter-bar">
+          <button class="pub-filter-btn active" data-filter="all">All (<span id="countAll">10</span>)</button>
+          <button class="pub-filter-btn" data-filter="research">Preprints &amp; Research (<span id="countResearch">3</span>)</button>
+          <button class="pub-filter-btn" data-filter="conference">Conference Papers (<span id="countConf">1</span>)</button>
+          <button class="pub-filter-btn" data-filter="article">Articles (<span id="countArt">6</span>)</button>
+        </div>
+      </div>
+
+      <!-- Complete Publications Catalog (10 items) -->
+      <div class="pub-list" id="pubList">
+
+        <div class="pub-item" data-category="preprint" data-title="future-proofing cs careers in the ai era">
+          <span class="pub-idx">10</span>
+          <div class="pub-content">
+            <div class="pub-title">Future-Proofing CS Careers in the AI Era</div>
+            <div class="pub-meta-mobile">
+              <span class="pub-badge preprint">Preprint</span>
+              <span class="pub-date">Jun 2026</span>
+              <button class="pub-action-btn" onclick="copyCitation('Future-Proofing CS Careers in the AI Era (Preprint, June 2026)')">Copy Title</button>
+            </div>
+          </div>
+          <div class="pub-meta-right">
+            <span class="pub-badge preprint">Preprint</span>
+            <span class="pub-date">Jun 2026</span>
+            <button class="pub-action-btn" onclick="copyCitation('Future-Proofing CS Careers in the AI Era (Preprint, June 2026)')">Copy Title</button>
+          </div>
+        </div>
+
+        <div class="pub-item" data-category="research" data-title="5g and pandemics coincidence or causation">
+          <span class="pub-idx">09</span>
+          <div class="pub-content">
+            <div class="pub-title">5G and Pandemics: Coincidence or Causation?</div>
+            <div class="pub-meta-mobile">
+              <span class="pub-badge research">Research</span>
+              <span class="pub-date">Nov 2025</span>
+              <button class="pub-action-btn" onclick="copyCitation('5G and Pandemics: Coincidence or Causation? (Research, November 2025)')">Copy Title</button>
+            </div>
+          </div>
+          <div class="pub-meta-right">
+            <span class="pub-badge research">Research</span>
+            <span class="pub-date">Nov 2025</span>
+            <button class="pub-action-btn" onclick="copyCitation('5G and Pandemics: Coincidence or Causation? (Research, November 2025)')">Copy Title</button>
+          </div>
+        </div>
+
+        <div class="pub-item" data-category="article" data-title="ai transforming the it workforce">
+          <span class="pub-idx">08</span>
+          <div class="pub-content">
+            <div class="pub-title">AI Transforming the IT Workforce</div>
+            <div class="pub-meta-mobile">
+              <span class="pub-badge article">Article</span>
+              <span class="pub-date">Jul 2025</span>
+              <button class="pub-action-btn" onclick="copyCitation('AI Transforming the IT Workforce (Article, July 2025)')">Copy Title</button>
+            </div>
+          </div>
+          <div class="pub-meta-right">
+            <span class="pub-badge article">Article</span>
+            <span class="pub-date">Jul 2025</span>
+            <button class="pub-action-btn" onclick="copyCitation('AI Transforming the IT Workforce (Article, July 2025)')">Copy Title</button>
+          </div>
+        </div>
+
+        <div class="pub-item" data-category="article" data-title="the ai revolution opportunities and challenges">
+          <span class="pub-idx">07</span>
+          <div class="pub-content">
+            <div class="pub-title">The AI Revolution Opportunities and Challenges</div>
+            <div class="pub-meta-mobile">
+              <span class="pub-badge article">Article</span>
+              <span class="pub-date">Jul 2025</span>
+              <button class="pub-action-btn" onclick="copyCitation('The AI Revolution Opportunities and Challenges (Article, July 2025)')">Copy Title</button>
+            </div>
+          </div>
+          <div class="pub-meta-right">
+            <span class="pub-badge article">Article</span>
+            <span class="pub-date">Jul 2025</span>
+            <button class="pub-action-btn" onclick="copyCitation('The AI Revolution Opportunities and Challenges (Article, July 2025)')">Copy Title</button>
+          </div>
+        </div>
+
+        <div class="pub-item" data-category="article" data-title="ai agents taking over trends impacts and whats next">
+          <span class="pub-idx">06</span>
+          <div class="pub-content">
+            <div class="pub-title">AI Agents Taking Over Trends, Impacts, and What’s Next</div>
+            <div class="pub-meta-mobile">
+              <span class="pub-badge article">Article</span>
+              <span class="pub-date">Jul 2025</span>
+              <button class="pub-action-btn" onclick="copyCitation('AI Agents Taking Over Trends, Impacts, and What’s Next (Article, July 2025)')">Copy Title</button>
+            </div>
+          </div>
+          <div class="pub-meta-right">
+            <span class="pub-badge article">Article</span>
+            <span class="pub-date">Jul 2025</span>
+            <button class="pub-action-btn" onclick="copyCitation('AI Agents Taking Over Trends, Impacts, and What’s Next (Article, July 2025)')">Copy Title</button>
+          </div>
+        </div>
+
+        <div class="pub-item" data-category="article" data-title="dark factories transforming production with complete automation">
+          <span class="pub-idx">05</span>
+          <div class="pub-content">
+            <div class="pub-title">Dark Factories: Transforming Production with Complete Automation</div>
+            <div class="pub-meta-mobile">
+              <span class="pub-badge article">Article</span>
+              <span class="pub-date">Apr 2025</span>
+              <button class="pub-action-btn" onclick="copyCitation('Dark Factories: Transforming Production with Complete Automation (Article, April 2025)')">Copy Title</button>
+            </div>
+          </div>
+          <div class="pub-meta-right">
+            <span class="pub-badge article">Article</span>
+            <span class="pub-date">Apr 2025</span>
+            <button class="pub-action-btn" onclick="copyCitation('Dark Factories: Transforming Production with Complete Automation (Article, April 2025)')">Copy Title</button>
+          </div>
+        </div>
+
+        <div class="pub-item" data-category="research" data-title="perceptions of success and failure among btec students a qualitative exploration">
+          <span class="pub-idx">04</span>
+          <div class="pub-content">
+            <div class="pub-title">Perceptions of Success and Failure Among BTEC Students: A Qualitative Exploration</div>
+            <div class="pub-meta-mobile">
+              <span class="pub-badge research">Research</span>
+              <span class="pub-date">Apr 2025</span>
+              <button class="pub-action-btn" onclick="copyCitation('Perceptions of Success and Failure Among BTEC Students (Research, April 2025)')">Copy Title</button>
+            </div>
+          </div>
+          <div class="pub-meta-right">
+            <span class="pub-badge research">Research</span>
+            <span class="pub-date">Apr 2025</span>
+            <button class="pub-action-btn" onclick="copyCitation('Perceptions of Success and Failure Among BTEC Students (Research, April 2025)')">Copy Title</button>
+          </div>
+        </div>
+
+        <div class="pub-item" data-category="conference" data-title="a beginners guide to machine learning applications in daily life">
+          <span class="pub-idx">03</span>
+          <div class="pub-content">
+            <div class="pub-title">A Beginner's Guide to Machine Learning: Applications in Daily Life</div>
+            <div class="pub-meta-mobile">
+              <span class="pub-badge conference">Conference</span>
+              <span class="pub-date">Apr 2025</span>
+              <button class="pub-action-btn" onclick="copyCitation('A Beginner\'s Guide to Machine Learning: Applications in Daily Life (Conference Paper, April 2025)')">Copy Title</button>
+            </div>
+          </div>
+          <div class="pub-meta-right">
+            <span class="pub-badge conference">Conference Paper</span>
+            <span class="pub-date">Apr 2025</span>
+            <button class="pub-action-btn" onclick="copyCitation('A Beginner\'s Guide to Machine Learning: Applications in Daily Life (Conference Paper, April 2025)')">Copy Title</button>
+          </div>
+        </div>
+
+        <div class="pub-item" data-category="article" data-title="the effect of artificial intelligence on everyday life">
+          <span class="pub-idx">02</span>
+          <div class="pub-content">
+            <div class="pub-title">The Effect of Artificial Intelligence on Everyday Life</div>
+            <div class="pub-meta-mobile">
+              <span class="pub-badge article">Article</span>
+              <span class="pub-date">Apr 2025</span>
+              <button class="pub-action-btn" onclick="copyCitation('The Effect of Artificial Intelligence on Everyday Life (Article, April 2025)')">Copy Title</button>
+            </div>
+          </div>
+          <div class="pub-meta-right">
+            <span class="pub-badge article">Article</span>
+            <span class="pub-date">Apr 2025</span>
+            <button class="pub-action-btn" onclick="copyCitation('The Effect of Artificial Intelligence on Everyday Life (Article, April 2025)')">Copy Title</button>
+          </div>
+        </div>
+
+        <div class="pub-item" data-category="article" data-title="hyderabads green crisis the alarming effect of hcu deforestation">
+          <span class="pub-idx">01</span>
+          <div class="pub-content">
+            <div class="pub-title">Hyderabad's Green Crisis: The Alarming Effect of HCU Deforestation</div>
+            <div class="pub-meta-mobile">
+              <span class="pub-badge article">Article</span>
+              <span class="pub-date">Apr 2025</span>
+              <button class="pub-action-btn" onclick="copyCitation('Hyderabad\'s Green Crisis: The Alarming Effect of HCU Deforestation (Article, April 2025)')">Copy Title</button>
+            </div>
+          </div>
+          <div class="pub-meta-right">
+            <span class="pub-badge article">Article</span>
+            <span class="pub-date">Apr 2025</span>
+            <button class="pub-action-btn" onclick="copyCitation('Hyderabad\'s Green Crisis: The Alarming Effect of HCU Deforestation (Article, April 2025)')">Copy Title</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="no-pub-found" id="noPubFound">
+        No publications match your filter or search query.
+      </div>
     </div>
   </section>
 
+  <!-- Verified Credentials -->
   <section id="credentials" class="divider-top">
     <div class="wrap">
       <div class="section-head">
@@ -546,6 +1216,7 @@
           <div class="eyebrow">Verified</div>
           <h2 class="section-title">Certifications &amp; credentials</h2>
         </div>
+        <div class="section-note">Industry credentials and competition rankings.</div>
       </div>
 
       <div class="grid-3">
@@ -558,62 +1229,76 @@
         <div class="cred-card">
           <div class="kicker">Oracle Cloud Infrastructure</div>
           <h4>Generative AI Professional</h4>
-          <p>2025 OCI certification covering generative AI services and application patterns.</p>
+          <p>2025 OCI certification covering generative AI services, LLM integration, and application patterns.</p>
         </div>
         <div class="cred-card">
           <div class="kicker">Oracle Cloud Infrastructure</div>
           <h4>Data Science Professional</h4>
-          <p>2025 OCI certification covering the data science and ML tooling stack.</p>
+          <p>2025 OCI certification covering data science lifecycle and ML model workflows.</p>
         </div>
         <div class="cred-card">
           <div class="kicker">Deloitte (Forage)</div>
           <h4>Cyber Job Simulation</h4>
-          <p>Applied cybersecurity job simulation covering triage and analysis workflows.</p>
+          <p>Applied cybersecurity job simulation covering incident triage, forensics, and analysis workflows.</p>
         </div>
         <div class="cred-card">
           <div class="kicker">Competitive Programming</div>
           <h4>Code Rush 2K25 Hackathon</h4>
-          <p>Placed top 5 out of 500+ competing teams.</p>
+          <p>Placed top 5 out of 500+ competing teams in algorithmic problem solving.</p>
+          <div class="idline"><a href="https://leetcode.com/u/Sai-Chaitanya-ch/" target="_blank" rel="noopener noreferrer" style="color:var(--teal); text-decoration:none;">LeetCode Profile ↗</a></div>
         </div>
         <div class="cred-card">
-          <div class="kicker">Independent Project</div>
+          <div class="kicker">Independent Tooling</div>
           <h4>Hands Free Ops</h4>
-          <p>Python automation tool that auto-submits campus WiFi portal credentials at MBU.</p>
+          <p>Python automation script that securely auto-submits campus WiFi portal credentials at MBU.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- 3 Experiences Section -->
   <section id="experience" class="divider-top">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Prior roles</div>
+          <div class="eyebrow">Career &amp; roles</div>
           <h2 class="section-title">Experience</h2>
         </div>
+        <div class="section-note">3 roles across startup growth, engineering, and marketing.</div>
       </div>
 
       <div>
         <div class="exp-row">
+          <div class="exp-time">2025 – Present</div>
+          <div>
+            <h4>Growth Strategist — Starto India</h4>
+            <p>Driving core growth, user acquisition, and event execution. Organized and led flagship event <strong>Sarathi-2047</strong>, executed script writing, lead tracking funnels, reel growth boost, and product planning for founder tools.</p>
+          </div>
+          <div class="exp-id"><span class="tag" style="color:var(--teal); border-color:rgba(87,214,201,0.4);">ONGOING</span></div>
+        </div>
+
+        <div class="exp-row">
           <div class="exp-time">Oct – Nov 2025</div>
           <div>
             <h4>Software Development Engineer Intern — Bluestock Fintech</h4>
-            <p>Hands-on SDE internship contributing to product development within a fintech engineering team.</p>
+            <p>Hands-on SDE internship contributing to product development, frontend components, and feature delivery within a fintech engineering team.</p>
           </div>
           <div class="exp-id">ID: BFSD130780</div>
         </div>
+
         <div class="exp-row">
           <div class="exp-time">Aug – Sep 2025</div>
           <div>
             <h4>Marketing Intern — Mindenious</h4>
-            <p>Supported marketing execution and campaign work for an early-stage team.</p>
+            <p>Supported marketing execution, organic campaign strategy, brand content, and audience engagement for an early-stage team.</p>
           </div>
-          <div class="exp-id"></div>
+          <div class="exp-id">COMPLETED</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Skills & Stack -->
   <section class="divider-top">
     <div class="wrap">
       <div class="section-head">
@@ -628,6 +1313,7 @@
         <span class="skill-chip">React</span>
         <span class="skill-chip">Next.js</span>
         <span class="skill-chip">React Native</span>
+        <span class="skill-chip">Expo / EAS</span>
         <span class="skill-chip">PostgreSQL</span>
         <span class="skill-chip">REST APIs</span>
         <span class="skill-chip">Tailwind CSS</span>
@@ -638,6 +1324,19 @@
         <span class="skill-chip">AWS</span>
         <span class="skill-chip">Oracle Cloud Infrastructure</span>
         <span class="skill-chip">Growth Strategy</span>
+        <span class="skill-chip">Product Planning</span>
+        <span class="skill-chip">Leads Tracking</span>
+      </div>
+
+      <div class="achievement-strip">
+        <span><strong>3,715+ Reads</strong> on ResearchGate across 10 published papers &amp; preprints</span>
+        <span>
+          <a href="https://www.researchgate.net/profile/Sai-Chaitanya-Chatakommu/research" target="_blank" rel="noopener noreferrer">ResearchGate Profile ↗</a>
+          &nbsp;·&nbsp;
+          <a href="https://leetcode.com/u/Sai-Chaitanya-ch/" target="_blank" rel="noopener noreferrer">LeetCode ↗</a>
+          &nbsp;·&nbsp;
+          <a href="https://drive.google.com/file/d/1XeIZISIYP8JbUkUB6qarUzEPaPwSuGh-/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Download App ↗</a>
+        </span>
       </div>
     </div>
   </section>
@@ -650,16 +1349,40 @@
       <div>
         <div class="eyebrow">Get in touch</div>
         <h2 class="section-title">Let's build something.</h2>
-        <p>Open to conversations on product development, growth work, and applied AI research. Reach out through any of the channels listed.</p>
+        <p>Open to conversations on product development, growth strategy, software engineering, and applied AI research. Reach out directly or connect across platforms.</p>
         <div class="hero-links">
-          <a class="btn" href="mailto:your-email@example.com">Email me</a>
+          <a class="btn primary" href="mailto:chsai630333@gmail.com">Email chsai630333@gmail.com ↗</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/1XeIZISIYP8JbUkUB6qarUzEPaPwSuGh-/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Download Quarter-Q96 APK 📱</a>
         </div>
       </div>
       <ul class="contact-list">
-        <li><span class="clabel">LinkedIn</span><a href="#">add your profile link</a></li>
-        <li><span class="clabel">ResearchGate</span><a href="#">add your profile link</a></li>
-        <li><span class="clabel">GitHub</span><a href="#">add your profile link</a></li>
-        <li><span class="clabel">Internshala</span><a href="#">add your profile link</a></li>
+        <li>
+          <span class="clabel">Email</span>
+          <div>
+            <a href="mailto:chsai630333@gmail.com">chsai630333@gmail.com</a>
+            <button class="copy-email-btn" onclick="copyEmail()">Copy</button>
+          </div>
+        </li>
+        <li>
+          <span class="clabel">LinkedIn</span>
+          <a href="https://linkedin.com/in/sai-chaitanya-ch" target="_blank" rel="noopener noreferrer">linkedin.com/in/sai-chaitanya-ch ↗</a>
+        </li>
+        <li>
+          <span class="clabel">GitHub</span>
+          <a href="https://github.com/sai-chaitanya-ch" target="_blank" rel="noopener noreferrer">github.com/sai-chaitanya-ch ↗</a>
+        </li>
+        <li>
+          <span class="clabel">ResearchGate</span>
+          <a href="https://www.researchgate.net/profile/Sai-Chaitanya-Chatakommu/research" target="_blank" rel="noopener noreferrer">3,715+ Reads · View Profile ↗</a>
+        </li>
+        <li>
+          <span class="clabel">LeetCode</span>
+          <a href="https://leetcode.com/u/Sai-Chaitanya-ch/" target="_blank" rel="noopener noreferrer">leetcode.com/u/Sai-Chaitanya-ch ↗</a>
+        </li>
+        <li>
+          <span class="clabel">Quarter-Q96 APK</span>
+          <a href="https://drive.google.com/file/d/1XeIZISIYP8JbUkUB6qarUzEPaPwSuGh-/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Google Drive Download (Beta) ↗</a>
+        </li>
       </ul>
     </div>
     <div class="foot-note">
@@ -669,13 +1392,24 @@
   </div>
 </footer>
 
+<!-- Toast Notification -->
+<div id="toast">
+  <span class="toast-dot"></span>
+  <span id="toastMsg">Copied to clipboard</span>
+</div>
+
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Back to top">↑</button>
+
 <script>
+  /* Terminal Line Rotator */
   (function(){
     var lines = [
       "compiling next release",
-      "reviewing beta feedback",
-      "drafting preprint no. 8",
-      "auditing conversion funnel"
+      "reviewing beta telemetry",
+      "scaling Starto India growth",
+      "drafting publication no. 11",
+      "tracking 3,715+ reads"
     ];
     var el = document.getElementById('terminalLine');
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -690,6 +1424,171 @@
       }, 250);
     }, 3200);
     el.style.transition = 'opacity 0.25s';
+  })();
+
+  /* Toast Notification Utility */
+  function showToast(msg){
+    var toast = document.getElementById('toast');
+    var toastMsg = document.getElementById('toastMsg');
+    if(!toast || !toastMsg) return;
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function(){
+      toast.classList.remove('show');
+    }, 2400);
+  }
+
+  /* Copy Email */
+  function copyEmail(){
+    navigator.clipboard.writeText('chsai630333@gmail.com').then(function(){
+      showToast('Email copied to clipboard: chsai630333@gmail.com');
+    }).catch(function(){
+      showToast('chsai630333@gmail.com');
+    });
+  }
+
+  /* Copy Citation */
+  function copyCitation(text){
+    navigator.clipboard.writeText(text).then(function(){
+      showToast('Copied: "' + text + '"');
+    }).catch(function(){
+      showToast(text);
+    });
+  }
+
+  /* Reading Progress Bar & Back to Top */
+  window.addEventListener('scroll', function(){
+    var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (height > 0) ? (winScroll / height) * 100 : 0;
+    var bar = document.getElementById('scrollProgressBar');
+    if(bar) bar.style.width = scrolled + '%';
+
+    var backBtn = document.getElementById('backToTop');
+    if(backBtn){
+      if(winScroll > 400){
+        backBtn.classList.add('show');
+      } else {
+        backBtn.classList.remove('show');
+      }
+    }
+  });
+
+  document.getElementById('backToTop').addEventListener('click', function(){
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  /* Mobile Navigation Drawer Toggle */
+  (function(){
+    var toggleBtn = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    var mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    if(!toggleBtn || !menu) return;
+
+    toggleBtn.addEventListener('click', function(){
+      var isOpen = menu.classList.contains('open');
+      if(isOpen){
+        menu.classList.remove('open');
+        toggleBtn.classList.remove('open');
+        document.body.style.overflow = '';
+      } else {
+        menu.classList.add('open');
+        toggleBtn.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    mobileLinks.forEach(function(link){
+      link.addEventListener('click', function(){
+        menu.classList.remove('open');
+        toggleBtn.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && menu.classList.contains('open')){
+        menu.classList.remove('open');
+        toggleBtn.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  })();
+
+  /* Publication Filter & Search */
+  (function(){
+    var filterBtns = document.querySelectorAll('.pub-filter-btn');
+    var pubItems = document.querySelectorAll('.pub-item');
+    var searchInput = document.getElementById('pubSearch');
+    var noFound = document.getElementById('noPubFound');
+    var currentFilter = 'all';
+
+    function applyFilter(){
+      var query = (searchInput ? searchInput.value.toLowerCase().trim() : '');
+      var visibleCount = 0;
+
+      pubItems.forEach(function(item){
+        var cat = item.getAttribute('data-category') || '';
+        var title = (item.getAttribute('data-title') || item.textContent).toLowerCase();
+
+        var matchesCategory = (currentFilter === 'all') ||
+                              (cat === currentFilter) ||
+                              (currentFilter === 'research' && (cat === 'research' || cat === 'preprint'));
+
+        var matchesSearch = !query || title.indexOf(query) !== -1;
+
+        if(matchesCategory && matchesSearch){
+          item.style.display = 'grid';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      if(noFound){
+        noFound.style.display = (visibleCount === 0) ? 'block' : 'none';
+      }
+    }
+
+    if(filterBtns.length){
+      filterBtns.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          filterBtns.forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          currentFilter = btn.getAttribute('data-filter') || 'all';
+          applyFilter();
+        });
+      });
+    }
+
+    if(searchInput){
+      searchInput.addEventListener('input', applyFilter);
+    }
+  })();
+
+  /* Active Nav Scrollspy */
+  (function(){
+    var sections = document.querySelectorAll('section[id], footer[id]');
+    var navLinks = document.querySelectorAll('nav a.nav-link');
+    if(!sections.length || !navLinks.length) return;
+
+    window.addEventListener('scroll', function(){
+      var scrollPos = window.scrollY + 120;
+      sections.forEach(function(sec){
+        var top = sec.offsetTop;
+        var height = sec.offsetHeight;
+        var id = sec.getAttribute('id');
+        if(scrollPos >= top && scrollPos < top + height){
+          navLinks.forEach(function(link){
+            link.classList.remove('nav-active');
+            if(link.getAttribute('href') === '#' + id){
+              link.classList.add('nav-active');
+            }
+          });
+        }
+      });
+    });
   })();
 </script>
 
